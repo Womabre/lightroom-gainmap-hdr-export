@@ -1,0 +1,14 @@
+# macOS and Xcode user state
+.DS_Store
+**/.DS_Store
+**/xcuserdata/
+**/*.xcuserstate
+**/DerivedData/
+**/.build/
+
+# Generated build and release outputs
+/build/
+/plugin/GainMap HDR Heic Export.lrdevplugin/toGainMapHDR
+/plugin/GainMap HDR Heic Export.lrdevplugin/*.ci.metallib
+/toGainMapHDR/bin/toGainMapHDR
+/toGainMapHDR/bin/*.ci.metallib
