@@ -51,12 +51,6 @@
             ReferencedContainer = "container:toGainMapHDR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "/Users/luyao/Desktop/export/test.tif /Users/luyao/Desktop/export/  -H -b /Users/luyao/Desktop/export/test.avif"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

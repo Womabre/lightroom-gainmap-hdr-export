@@ -24,7 +24,15 @@ This compiles the Core Image Metal kernels and Swift converter into the Lightroo
 make package
 ```
 
-The resulting plugin archive is written to `build/GainMap HDR Heic Export.lrdevplugin.zip`.
+The resulting plugin archive is written to `build/GainMap HDR Heic Export.lrdevplugin.zip`. The archive includes the plugin folder, converter, and compiled Metal kernels, without extra macOS resource-fork entries.
+
+To run the converter integration checks and build the package:
+
+```sh
+make test package
+```
+
+These checks use the included HEIC sample and verify successful HEIC/JPEG exports, ISO gain-map metadata, filename suffix handling, subsampled monochrome JPEG output, and rejection of invalid options. They require macOS, Xcode, and the Metal toolchain.
 
 ## Install
 
@@ -40,6 +48,14 @@ JPEG output supports SDR and gain-map modes. PQ and HLG output require HEIC.
 - `toGainMapHDR/` — Swift command-line converter, Metal kernels, and Xcode project.
 - `plugin/` — Lightroom plugin source and generated build outputs.
 - `archive/` — older releases retained for reference; the root Makefile builds the current source only.
+- `tests/` — macOS converter integration checks using the included sample image.
+- `.github/workflows/release.yml` — pull-request and main-branch builds; version tags publish a GitHub release with the plugin zip and SHA-256 checksum.
+
+## Releases
+
+Push a version tag matching the version in `plugin/GainMap HDR Heic Export.lrdevplugin/Info.lua` (for example, `v3.3.2`) to build and publish a GitHub release. Review the workflow result and download the zip and checksum from the release page. Keep both files together and verify the download with `shasum -a 256 -c SHA256SUMS.txt`.
+
+Before announcing a release, install the packaged plugin in Lightroom Classic and complete the [release checklist](docs/release-checklist.md). Automated checks cannot verify Lightroom's UI or the appearance of the exported images.
 
 ## License
 
