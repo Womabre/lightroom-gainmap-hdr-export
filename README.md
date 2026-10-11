@@ -49,7 +49,7 @@ JPEG output supports SDR and gain-map modes. PQ and HLG output require HEIC.
 - `plugin/` — Lightroom plugin source and generated build outputs.
 - `archive/` — older releases retained for reference; the root Makefile builds the current source only.
 - `tests/` — macOS converter integration checks using the included sample image.
-- `.github/workflows/release.yml` — pull-request and main-branch builds; version tags publish a GitHub release with the plugin zip and SHA-256 checksum.
+- `.github/workflows/release.yml` — pull-request and branch builds; version tags publish a GitHub release with the plugin zip and SHA-256 checksum.
 
 ## Releases
 
